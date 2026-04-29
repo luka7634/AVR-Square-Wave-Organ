@@ -1,0 +1,20 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title="Main program entry point." alt="" coords="5,180,60,205"/>
+<area shape="rect" id="Node000002" href="$USART_8c.html#a4e54abf841c7504a329e3b91d3d3e2ac" title="Initializes the USART peripheral for serial communication." alt="" coords="152,5,239,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="34,179,42,151,55,113,77,74,106,40,138,24,140,28,110,44,81,77,60,115,47,152,39,181"/>
+<area shape="rect" id="Node000003" href="$pre__defined__songs_8h.html#a04195075d0ebd3a5d0ac7efdf76906b7" title="Plays &quot;Imperial March&quot; (Darth Vader&#39;s Theme) from Star Wars." alt="" coords="116,55,275,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="37,179,63,135,83,110,106,89,116,83,119,88,110,93,87,114,67,138,42,181"/>
+<area shape="rect" id="Node000004" href="$pre__defined__songs_8c.html#ab6cfb47ed8102d6b6bcdcd2c5953470a" title="Plays &quot;Twinkle Twinkle Little Star&quot; melody." alt="" coords="108,104,283,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="52,177,107,146,142,132,144,137,109,151,55,182"/>
+<area shape="rect" id="Node000005" href="$organ_8c.html#a0c994e5f5c2d958e9fa32cf4c1e238da" title="Play a musical tone." alt="" coords="331,129,412,155"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="60,186,317,147,318,153,61,191"/>
+<area shape="rect" id="Node000006" href="$USART_8h.html#abdc92ff01ce6977cdf84d286273471c2" title="Sends a null&#45;terminated string over USART." alt="" coords="150,205,241,231"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="60,194,137,206,136,212,60,199"/>
+<area shape="rect" id="Node000007" href="$USART_8c.html#aab1b5ed8ffb09b773f9e8b0446c11571" title="Receives a single byte from USART." alt="" coords="145,255,245,280"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="52,203,78,222,109,240,133,249,131,254,107,244,75,226,49,208"/>
+<area shape="rect" id="Node000008" href="$organ_8c.html#a784e778f71b548cfe7bba49f78f3b184" title=" " alt="" coords="172,304,219,329"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="43,204,68,246,87,269,109,289,134,301,159,309,158,314,132,306,107,294,83,273,64,249,38,207"/>
+<area shape="rect" id="Node000009" href="$USART_8c.html#aeb0960d3dee50179935462beefa90a9a" title="Transmits a single byte over USART." alt="" coords="142,353,249,379"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="39,205,47,233,61,269,81,306,110,339,130,351,128,356,106,343,77,310,56,271,42,234,34,206"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="283,127,318,132,317,137,282,132"/>
+</map>

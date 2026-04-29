@@ -1,0 +1,5 @@
+<map id="play_twinkle_little_star" name="play_twinkle_little_star">
+<area shape="rect" id="Node000001" title="Plays &quot;Twinkle Twinkle Little Star&quot; melody." alt="" coords="5,5,180,31"/>
+<area shape="rect" id="Node000002" href="$organ_8c.html#a0c994e5f5c2d958e9fa32cf4c1e238da" title="Play a musical tone." alt="" coords="228,5,309,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,15,214,15,214,21,180,21"/>
+</map>

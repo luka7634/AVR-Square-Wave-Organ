@@ -1,0 +1,7 @@
+<map id="src/includes/pinDefines.h" name="src/includes/pinDefines.h">
+<area shape="rect" id="Node000001" title="Hardware pin mapping for BUZZER/buzzer output." alt="" coords="15,5,199,31"/>
+<area shape="rect" id="Node000002" href="$main_8c.html" title="Main program for serial&#45;controlled musical organ." alt="" coords="5,79,95,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,43,61,80,57,77,87,40"/>
+<area shape="rect" id="Node000003" href="$organ_8c.html" title="Implementation of tone generation functions for electronic organ." alt="" coords="119,79,213,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="128,40,159,77,154,80,124,43"/>
+</map>

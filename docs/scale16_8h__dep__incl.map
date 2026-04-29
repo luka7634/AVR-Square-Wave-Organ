@@ -1,0 +1,7 @@
+<map id="src/includes/scale16.h" name="src/includes/scale16.h">
+<area shape="rect" id="Node000001" title="Musical note frequency lookup table (16&#45;bit timer values)" alt="" coords="46,5,211,31"/>
+<area shape="rect" id="Node000002" href="$main_8c.html" title="Main program for serial&#45;controlled musical organ." alt="" coords="5,79,95,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,42,65,80,61,76,104,38"/>
+<area shape="rect" id="Node000003" href="$pre__defined__songs_8c.html" title="Implementation of pre&#45;defined songs for musical organ." alt="" coords="119,79,296,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,38,196,76,193,80,150,42"/>
+</map>
