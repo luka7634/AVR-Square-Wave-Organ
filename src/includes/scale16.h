@@ -90,6 +90,8 @@
 #define Q 250 /**< Short note duration */
 #define H 500 /**< Long note duration */
 
+#define tempo 1000
+
 /**
  * @defgroup Scale_Notes Scale Note Aliases (4th Octave)
  * @brief   Convenience aliases for standard scale notes in 4th octave
