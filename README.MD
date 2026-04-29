@@ -294,7 +294,7 @@ cat /dev/ttyUSB0 | xxd
 
 ## 📚 Documentation
 
-Open  in your browser.
+Open [docs](https://luka7634.github.io/AVR-Square-Wave-Organ) in your browser.
 
 ### Key Documentation Files
 
