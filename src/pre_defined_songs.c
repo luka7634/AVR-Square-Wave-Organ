@@ -26,3 +26,17 @@ void play_twinkle_little_star()
     for (uint8_t i = 0; i < 42; i++)
         playNote(estrellita_notas[i], estrellita_duraciones[i]);
 }
+
+void play_imperial_march()
+{
+    const uint16_t imperial_notas[] = {
+        G3, G3, G3, G3, Dx3, G3, G3, G3, G3, Dx3, G3, C4, C4, C4, G3, C4, Ax3, Ax3, Ax3, F3, Ax3, G3, G3, G3, Dx3, G3, C4, C4, C4, G3, C4, D4, Dx4, E4, F4, F4, F4, F4, F4, Ax3, Ax3, Ax3, F3, Ax3, G3, G3, G3, Dx3, G3, G3};
+
+    const uint16_t imperial_duraciones[] = {
+        H, H, H, Q, Q, H, Q, Q, Q, Q, H, Q, Q, Q, Q, H, Q, Q, Q, Q, H, Q, Q, Q, Q, H, Q, Q, Q, Q, H, H, H, H, H, H, Q, Q, H, Q, Q, Q, Q, H, Q, Q, Q, Q, H, H};
+
+#define _num_notes(x) sizeof(x) / sizeof(x[0])
+
+    for (uint8_t i = 0; i < _num_notes(imperial_notas); i++)
+        playNote(imperial_notas[i], imperial_duraciones[i]);
+}
