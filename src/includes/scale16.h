@@ -86,9 +86,9 @@
 /* Octave 6 Notes */
 #define C6  477     /**< C note, 6th octave (1047 Hz) */
 
-/* Whites and Blacks */
-#define Q 400 /* White */
-#define H 800 /* Black */
+/* Notes duration */
+#define Q 250 /**< Short note duration */
+#define H 500 /**< Long note duration */
 
 /**
  * @defgroup Scale_Notes Scale Note Aliases (4th Octave)

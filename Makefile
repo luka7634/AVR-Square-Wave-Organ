@@ -8,7 +8,7 @@ SIZE = avr-size
 CFLAGS = -Os -Wall -Wextra -mmcu=$(MCU) -DF_CPU=$(FREQ)
 CFLAGS += -I./src/includes
 
-SRCS = src/main.c src/organ.c
+SRCS = src/main.c src/organ.c src/pre_defined_songs.c src/USART.c
 OBJS = $(SRCS:.c=.o)
 
 TARGET = main

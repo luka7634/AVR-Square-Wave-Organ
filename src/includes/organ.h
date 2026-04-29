@@ -8,8 +8,6 @@
 #ifndef ORGAN_H
 #define ORGAN_H
 
-#include <stdint.h>  /**< Required for uint16_t type */
-
 /**
  * @brief       Play a musical tone
  * @param       half_us     Half period in microseconds (1/(2*frequency))
@@ -23,6 +21,7 @@
  * 
  * @see         pinDefines.h for buzzer pin configuration
  */
-void play_note(uint16_t half_us, uint16_t duration_ms);
+void playNote(uint16_t half_us, uint16_t duration_ms);
+void rest(uint16_t duration_ms);
 
 #endif /* ORGAN_H */

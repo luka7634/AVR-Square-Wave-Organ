@@ -24,5 +24,5 @@ void play_twinkle_little_star()
         Q, Q, Q, Q, Q, Q, H};
 
     for (uint8_t i = 0; i < 42; i++)
-        play_note(estrellita_notas[i], estrellita_duraciones[i]);
+        playNote(estrellita_notas[i], estrellita_duraciones[i]);
 }
