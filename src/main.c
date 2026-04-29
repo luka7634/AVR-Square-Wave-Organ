@@ -70,6 +70,7 @@ int main(void)
 					rest(currentNoteLength);
 			}
 		}
+		_delay_ms(10);
 	}
 
 	return 0;
