@@ -1,4 +1,212 @@
 /**
+ * @mainpage Serial-Controlled Musical Organ for ATmega168
+ * 
+ * @image html https://via.placeholder.com/800x200?text=Serial+Organ "Serial Organ Banner"
+ * 
+ * @section intro Introduction
+ * This project implements a **serial-controlled musical organ** on an ATmega168 
+ * microcontroller. Convert your computer keyboard into a musical instrument via 
+ * the serial terminal!
+ * 
+ * @section features Features
+ * - 🎹 **18-key polyphonic organ** (2 octaves including sharps)
+ * - 🎵 **Real-time note playback** via USART (9600 baud)
+ * - 🎼 **Pre-programmed songs** (Twinkle Little Star, Imperial March)
+ * - ⚡ **Adjustable tempo** (short/long note duration modes)
+ * - 🔌 **Simple hardware** (MCU + buzzer + USB-to-serial)
+ * 
+ * @section quickstart Quick Start Guide
+ * 1. Connect buzzer to PD5 (configurable)
+ * 2. Connect USB-to-serial to PD0(RX)/PD1(TX)
+ * 3. Compile with `make`
+ * 4. Flash with `make flash`
+ * 5. Open serial terminal at 9600 baud
+ * 6. Press keys to play music!
+ * 
+ * @section authors Authors
+ * - Roybel Carbonell Camejo
+ * 
+ * @section date Date
+ * 2026-04-29
+ * 
+ * @section license License
+ * Open source - feel free to modify and distribute
+ * 
+ * @section related Related Pages
+ * - @subpage commands_page
+ * - @subpage hardware_page
+ * - @subpage development_page
+ */
+
+/**
+ * @page commands_page Serial Commands Reference
+ * 
+ * @section keyboard_layout Keyboard to Note Mapping
+ * 
+ * ### White Keys (Natural Notes)
+ * | Key | Note | Frequency | Octave |
+ * |-----|------|-----------|--------|
+ * | a   | G4   | 392 Hz    | 4th    |
+ * | s   | A4   | 440 Hz    | 4th    |
+ * | d   | B4   | 494 Hz    | 4th    |
+ * | f   | C5   | 523 Hz    | 5th    |
+ * | g   | D5   | 587 Hz    | 5th    |
+ * | h   | E5   | 659 Hz    | 5th    |
+ * | j   | F5   | 698 Hz    | 5th    |
+ * | k   | G5   | 784 Hz    | 5th    |
+ * | l   | A5   | 880 Hz    | 5th    |
+ * | ;   | A#5  | 932 Hz    | 5th    |
+ * | '   | C6   | 1047 Hz   | 6th    |
+ * 
+ * ### Black Keys (Sharp Notes)
+ * | Key | Note | Frequency | Octave |
+ * |-----|------|-----------|--------|
+ * | w   | G#4  | 415 Hz    | 4th    |
+ * | e   | A#4  | 466 Hz    | 4th    |
+ * | t   | C#5  | 554 Hz    | 5th    |
+ * | y   | D#5  | 622 Hz    | 5th    |
+ * | i   | F#5  | 740 Hz    | 5th    |
+ * | o   | G#5  | 831 Hz    | 5th    |
+ * | p   | B5   | 988 Hz    | 5th    |
+ * 
+ * @section control_commands Control Commands
+ * | Command | Action | Description |
+ * |---------|--------|-------------|
+ * | `[`     | Short mode | Set note duration to 250ms |
+ * | `]`     | Long mode  | Set note duration to 500ms |
+ * | `1`     | Play song  | Twinkle Twinkle Little Star |
+ * | `2`     | Play song  | Imperial March (Star Wars) |
+ * 
+ * @section usage_example Usage Example
+ * @verbatim
+ * ---Serial Organ---
+ * Ready!
+ * > a        (plays G4)
+ * > s        (plays A4)
+ * > [        (short mode enabled)
+ * > a        (plays G4 - shorter)
+ * > 1        (plays Twinkle Little Star)
+ * @endverbatim
+ */
+
+/**
+ * @page hardware_page Hardware Setup Guide
+ * 
+ * @section components Required Components
+ * - ATmega168 microcontroller (DIP-28)
+ * - 16 MHz crystal (optional, can use internal 8MHz)
+ * - 2 × 22pF capacitors (for crystal)
+ * - Piezo buzzer (5V)
+ * - 220Ω resistor (for buzzer)
+ * - USB-to-serial adapter (FTDI, CP2102, CH340)
+ * - 5V power supply
+ * - Breadboard and jumper wires
+ * 
+ * @section wiring Wiring Diagram
+ * @verbatim
+ * ATmega168          USB-to-Serial
+ * ┌─────────┐        ┌──────────┐
+ * │PD0 (2)  ├────────┤RX        │
+ * │PD1 (3)  ├────────┤TX        │
+ * │PD5 (11) ├────┬───┤          │
+ * │         │   220Ω│          │
+ * │         │    ┌─┴─┐          │
+ * │GND (8)  ├────┴───┴──────────┤GND
+ * │VCC (7)  ├────────┤VCC (5V)  │
+ * └─────────┘        └──────────┘
+ *            Buzzer
+ * @endverbatim
+ * 
+ * @section pin_configuration Pin Configuration
+ * Edit `src/includes/pinDefines.h` to change buzzer pin:
+ * @code
+ * #define BUZZER_DDR   DDRD
+ * #define BUZZER_PORT  PORTD
+ * #define BUZZER_PIN   PD5    // Change to any PD pin
+ * @endcode
+ * 
+ * @section power_requirements Power Requirements
+ * - Voltage: 5V DC
+ * - Current (idle): ~15mA
+ * - Current (playing): ~25-35mA
+ * - Can be powered via USB-to-serial adapter
+ */
+
+/**
+ * @page development_page Development & Customization
+ * 
+ * @section adding_songs Adding New Songs
+ * 
+ * **Step 1:** Add function declaration in `pre_defined_songs.h`
+ * @code
+ * void play_my_song(void);
+ * @endcode
+ * 
+ * **Step 2:** Implement the song in `pre_defined_songs.c`
+ * @code
+ * void play_my_song(void)
+ * {
+ *     const uint16_t notes[] = {C4, D4, E4, F4, G4, A4, B4, C5};
+ *     const uint16_t durations[] = {Q, Q, Q, Q, Q, Q, Q, H};
+ *     
+ *     for (uint8_t i = 0; i < 8; i++)
+ *         playNote(notes[i], durations[i]);
+ * }
+ * @endcode
+ * 
+ * **Step 3:** Add command in `main.c`
+ * @code
+ * else if (receivedChar == '3')
+ * {
+ *     printString("\r\nPlaying my custom song\r\n");
+ *     play_my_song();
+ * }
+ * @endcode
+ * 
+ * @section note_frequencies Note Frequency Calculation
+ * 
+ * Timer values are calculated as:
+ * @code
+ * OCR = F_CPU / (2 × frequency × prescaler)
+ * 
+ * Example for C4 (261.63 Hz) with F_CPU=16MHz, prescaler=1:
+ * OCR = 16000000 / (2 × 261.63 × 1) = 30578
+ * @endcode
+ * 
+ * @section adding_notes Adding New Notes
+ * Add to `scale16.h`:
+ * @code
+ * #define NewNote  OCR_VALUE
+ * @endcode
+ * 
+ * @section improving_performance Performance Improvements
+ * 
+ * ### Implement Non-blocking Playback
+ * @code
+ * // Use timer interrupts instead of _delay_ms()
+ * ISR(TIMER1_COMPA_vect) {
+ *     // Toggle buzzer pin
+ * }
+ * @endcode
+ * 
+ * ### Add Serial Buffer Queue
+ * @code
+ * #define RX_BUFFER_SIZE 32
+ * volatile char rx_buffer[RX_BUFFER_SIZE];
+ * // Implement circular buffer in ISR
+ * @endcode
+ * 
+ * @section troubleshooting Troubleshooting
+ * 
+ * | Problem | Solution |
+ * |---------|----------|
+ * | No sound | Check buzzer connection and resistor |
+ * | Garbled serial | Verify baud rate (9600) and F_CPU |
+ * | Wrong notes | Check F_CPU in CPU.h |
+ * | No serial echo | Verify RX/TX cross connection |
+ */
+
+/**
  * @file main.c
  * @brief Main program for serial-controlled musical organ
  * @author Roybel Carbonell Camejo
